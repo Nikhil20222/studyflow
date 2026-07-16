@@ -1,0 +1,129 @@
+.header {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 32px;
+  border-bottom: 1px solid #2a2a30;
+  background-color: #0a0a0c;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-menu-button {
+  display: none;
+  color: #f7f7f8;
+}
+
+.header-search {
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  background-color: #131316;
+  color: #5b5b63;
+}
+
+.header-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #f7f7f8;
+  font-size: 14px;
+}
+
+.header-search input::placeholder {
+  color: #5b5b63;
+}
+
+.header-search:focus-within {
+  border-color: rgba(225, 29, 46, 0.4);
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icon-button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c7c7cc;
+  transition: background-color 150ms ease-out;
+}
+
+.header-icon-button:hover {
+  background-color: #1c1c20;
+  color: #f7f7f8;
+}
+
+.header-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: #e11d2e;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 12px;
+  border-left: 1px solid #2a2a30;
+}
+
+.header-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background-color: #e11d2e;
+  color: #f7f7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.header-profile-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f7f7f8;
+}
+
+@media (max-width: 900px) {
+  .header-menu-button {
+    display: flex;
+  }
+
+  .header-profile-name {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .header-search {
+    max-width: none;
+  }
+}
