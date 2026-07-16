@@ -1,0 +1,28 @@
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  background-color: #1c1c20;
+  color: #f7f7f8;
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 150ms ease-out, transform 150ms ease-out;
+}
+
+.action-button:hover {
+  border-color: #e11d2e;
+  transform: translateY(-1px);
+}
+
+.action-button svg {
+  color: #e11d2e;
+}
