@@ -1,0 +1,33 @@
+.greeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.greeting-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f7f7f8;
+  margin-bottom: 6px;
+}
+
+.greeting-subtitle {
+  font-size: 14px;
+  color: #8a8a93;
+}
+
+.greeting-streak {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background-color: #3a1216;
+  border: 1px solid rgba(225, 29, 46, 0.4);
+  color: #e11d2e;
+  font-size: 13px;
+  font-weight: 600;
+}
