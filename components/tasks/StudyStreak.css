@@ -1,0 +1,80 @@
+.streak-card {
+  background-color: #131316;
+  border: 1px solid rgba(225, 29, 46, 0.35);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 150ms ease-out;
+  animation: streakGlow 4s ease-in-out infinite;
+}
+
+.streak-card:hover {
+  transform: translateY(-2px);
+}
+
+.streak-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.streak-flame {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: #3a1216;
+  color: #e11d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.streak-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f7f7f8;
+}
+
+.streak-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f7f7f8;
+  margin-bottom: 14px;
+}
+
+.streak-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.streak-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #c7c7cc;
+}
+
+.streak-stat svg {
+  color: #e0a72a;
+}
+
+.streak-message {
+  font-size: 12px;
+  color: #8a8a93;
+  border-top: 1px solid #2a2a30;
+  padding-top: 12px;
+}
+
+@keyframes streakGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(225, 29, 46, 0);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(225, 29, 46, 0.12);
+  }
+}

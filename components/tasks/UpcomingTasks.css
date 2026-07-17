@@ -1,0 +1,60 @@
+.upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.upcoming-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  transition: background-color 150ms ease-out;
+}
+
+.upcoming-item:hover {
+  background-color: #1c1c20;
+}
+
+.upcoming-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 999px;
+  background-color: #5b5b63;
+}
+
+.upcoming-dot.high {
+  background-color: #e11d2e;
+}
+
+.upcoming-dot.medium {
+  background-color: #e0a72a;
+}
+
+.upcoming-dot.low {
+  background-color: #2fbf71;
+}
+
+.upcoming-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.upcoming-title {
+  font-size: 13px;
+  color: #f7f7f8;
+  margin-bottom: 2px;
+}
+
+.upcoming-subject {
+  font-size: 12px;
+  color: #8a8a93;
+}
+
+.upcoming-deadline {
+  font-size: 12px;
+  color: #5b5b63;
+  white-space: nowrap;
+}

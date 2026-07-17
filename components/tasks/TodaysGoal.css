@@ -1,0 +1,76 @@
+.goal-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.goal-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: #1c1c20;
+  color: #e11d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f7f7f8;
+}
+
+.goal-hours {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.goal-completed {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 30px;
+  font-weight: 600;
+  color: #f7f7f8;
+}
+
+.goal-target {
+  font-size: 13px;
+  color: #8a8a93;
+}
+
+.goal-track {
+  height: 8px;
+  border-radius: 999px;
+  background-color: #2a2a30;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.goal-fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: #e11d2e;
+  animation: growWidth 600ms ease-out;
+}
+
+.goal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8a8a93;
+}
+
+@keyframes growWidth {
+  from {
+    width: 0%;
+  }
+}
