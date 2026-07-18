@@ -1,0 +1,127 @@
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.calendar-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calendar-nav-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c7c7cc;
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+
+.calendar-nav-arrow:hover {
+  border-color: #e11d2e;
+  color: #f7f7f8;
+}
+
+.calendar-nav-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f7f7f8;
+  min-width: 160px;
+  text-align: center;
+}
+
+.calendar-nav-today {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  color: #c7c7cc;
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+
+.calendar-nav-today:hover {
+  border-color: #e11d2e;
+  color: #f7f7f8;
+}
+
+.calendar-nav-toggle {
+  position: relative;
+  display: flex;
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.toggle-tab {
+  position: relative;
+  z-index: 1;
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8a93;
+  transition: color 200ms ease-out;
+}
+
+.toggle-tab.active {
+  color: #f7f7f8;
+}
+
+.toggle-underline {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background-color: #e11d2e;
+  border-radius: 8px;
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-underline.week {
+  transform: translateX(100%);
+}
+
+/* ripple effect - CSS only pulse from center on press */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(225, 29, 46, 0.5);
+  border-radius: 999px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.ripple:active::after {
+  animation: rippleOut 450ms ease-out;
+}
+
+@keyframes rippleOut {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(14);
+    opacity: 0;
+  }
+}
