@@ -1,0 +1,113 @@
+.day-panel {
+  background-color: rgba(19, 19, 22, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+}
+
+.day-panel-header {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #2a2a30;
+}
+
+.day-panel-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f7f7f8;
+  margin-bottom: 10px;
+}
+
+.day-panel-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.day-panel-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background-color: #2a2a30;
+  overflow: hidden;
+}
+
+.day-panel-fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: #e11d2e;
+  animation: dayFillGrow 500ms ease-out;
+}
+
+.day-panel-progress span {
+  font-size: 11px;
+  color: #8a8a93;
+  white-space: nowrap;
+}
+
+.day-panel-empty {
+  font-size: 13px;
+  color: #5b5b63;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.day-panel-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.day-panel-section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8a8a93;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.day-panel-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: #0e0e11;
+  font-size: 13px;
+  color: #f7f7f8;
+  margin-bottom: 6px;
+}
+
+.day-panel-row.done {
+  color: #5b5b63;
+  text-decoration: line-through;
+}
+
+.day-panel-row.exam {
+  border-left: 2px solid #e11d2e;
+}
+
+.day-panel-subject {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e11d2e;
+}
+
+.day-panel-time {
+  font-size: 11px;
+  color: #8a8a93;
+  white-space: nowrap;
+}
+
+@keyframes dayFillGrow {
+  from {
+    width: 0%;
+  }
+}

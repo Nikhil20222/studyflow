@@ -1,0 +1,96 @@
+.upcoming-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.upcoming-column {
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 150ms ease-out, border-color 150ms ease-out;
+}
+
+.upcoming-column:hover {
+  transform: translateY(-2px);
+  border-color: #3a3a42;
+}
+
+.upcoming-column-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f7f7f8;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #2a2a30;
+}
+
+.upcoming-column-head svg {
+  color: #e11d2e;
+}
+
+.upcoming-column-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upcoming-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: upcomingFadeUp 300ms ease-out backwards;
+}
+
+.upcoming-marker {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 999px;
+  margin-top: 6px;
+  background-color: #5b5b63;
+}
+
+.upcoming-marker.exam {
+  background-color: #e11d2e;
+}
+
+.upcoming-marker.deadline {
+  background-color: #e0a72a;
+}
+
+.upcoming-marker.event {
+  background-color: #3e8eed;
+}
+
+.upcoming-entry-title {
+  font-size: 13px;
+  color: #f7f7f8;
+  margin-bottom: 2px;
+}
+
+.upcoming-entry-date {
+  font-size: 11px;
+  color: #8a8a93;
+}
+
+@keyframes upcomingFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .upcoming-panel {
+    grid-template-columns: 1fr;
+  }
+}
