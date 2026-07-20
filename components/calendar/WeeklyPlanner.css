@@ -1,253 +1,126 @@
 .weekly-planner {
-
-    background-color: #131316;
-
-      border: 1px solid #2a2a30;
-
-        border-radius: 16px;
-
-          padding: 20px;
-
-            overflow-x: auto;
-
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 20px;
+  overflow-x: auto;
 }
-
-
 
 .weekly-grid {
-
-    display: grid;
-
-      grid-template-columns: 100px repeat(7, 140px);
-
-        gap: 8px;
-
-          min-width: 1080px;
-
+  display: grid;
+  grid-template-columns: 100px repeat(7, 140px);
+  gap: 8px;
+  min-width: 1080px;
 }
-
-
 
 .weekly-corner {
-
-    background: none;
-
+  background: none;
 }
-
-
 
 .weekly-day-head {
-
-    text-align: center;
-
-      font-size: 12px;
-
-        font-weight: 600;
-
-          color: #8a8a93;
-
-            padding: 8px 0;
-
-              text-transform: uppercase;
-
-                letter-spacing: 0.03em;
-
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8a8a93;
+  padding: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
-
-
 
 .weekly-period-head {
-
-    display: flex;
-
-      align-items: center;
-
-        font-size: 12px;
-
-          font-weight: 600;
-
-            color: #e0a72a;
-
-              padding: 6px 4px;
-
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e0a72a;
+  padding: 6px 4px;
 }
-
-
 
 .weekly-cell {
-
-    min-height: 76px;
-
-      border-radius: 10px;
-
-        background-color: #0e0e11;
-
-          border: 1px solid #2a2a30;
-
-            padding: 6px;
-
-              display: flex;
-
-                align-items: center;
-
-                  justify-content: center;
-
-                    animation: weeklyCellFade 300ms ease-out backwards;
-
-                      transition: border-color 150ms ease-out, transform 150ms ease-out;
-
+  min-height: 76px;
+  border-radius: 10px;
+  background-color: #0e0e11;
+  border: 1px solid #2a2a30;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: weeklyCellFade 300ms ease-out backwards;
+  transition: border-color 150ms ease-out, transform 150ms ease-out;
 }
-
-
 
 .weekly-cell:hover {
-
-    border-color: #3a3a42;
-
-      transform: translateY(-1px);
-
+  border-color: #3a3a42;
+  transform: translateY(-1px);
 }
-
-
 
 .weekly-cell-empty {
-
-    color: #2a2a30;
-
-      font-size: 13px;
-
+  color: #2a2a30;
+  font-size: 13px;
 }
-
-
 
 .session-card {
-
-    width: 100%;
-
-      padding: 8px;
-
-        border-radius: 8px;
-
-          background-color: #131316;
-
-            border-left: 2px solid #e11d2e;
-
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #131316;
+  border-left: 2px solid #e11d2e;
 }
-
-
 
 .session-subject {
-
-    font-size: 10px;
-
-      font-weight: 600;
-
-        color: #e11d2e;
-
-          text-transform: uppercase;
-
+  font-size: 10px;
+  font-weight: 600;
+  color: #e11d2e;
+  text-transform: uppercase;
 }
-
-
 
 .session-goal {
-
-    font-size: 12px;
-
-      color: #f7f7f8;
-
-        margin: 4px 0 6px;
-
-          line-height: 1.3;
-
+  font-size: 12px;
+  color: #f7f7f8;
+  margin: 4px 0 6px;
+  line-height: 1.3;
 }
-
-
 
 .session-footer {
-
-    display: flex;
-
-      align-items: center;
-
-        justify-content: space-between;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-
 
 .session-duration {
-
-    font-size: 10px;
-
-      color: #8a8a93;
-
+  font-size: 10px;
+  color: #8a8a93;
 }
-
-
 
 .session-status {
-
-    font-size: 9px;
-
-      font-weight: 600;
-
-        padding: 2px 7px;
-
-          border-radius: 999px;
-
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
 }
-
-
 
 .session-status.pending {
-
-    background-color: #1c1c20;
-
-      color: #8a8a93;
-
+  background-color: #1c1c20;
+  color: #8a8a93;
 }
-
-
 
 .session-status.in-progress {
-
-    background-color: rgba(62, 142, 237, 0.15);
-
-      color: #3e8eed;
-
+  background-color: rgba(62, 142, 237, 0.15);
+  color: #3e8eed;
 }
-
-
 
 .session-status.completed {
-
-    background-color: rgba(47, 191, 113, 0.15);
-
-      color: #2fbf71;
-
+  background-color: rgba(47, 191, 113, 0.15);
+  color: #2fbf71;
 }
 
-
-
 @keyframes weeklyCellFade {
-
-    from {
-
-          opacity: 0;
-
-              transform: translateY(6px);
-
-    }
-
-      to {
-
-            opacity: 1;
-
-                transform: translateY(0);
-
-      }
-
-    }
-
-    
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
