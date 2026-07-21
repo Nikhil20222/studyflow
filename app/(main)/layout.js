@@ -1,5 +1,6 @@
 import Sidebar from "@/components/layout/Sidebar";
 import Header from "@/components/layout/Header";
+import WelcomeModal from "@/components/ui/WelcomeModal";
 import "./main.css";
 
 export default function MainLayout({ children }) {
@@ -10,6 +11,7 @@ export default function MainLayout({ children }) {
         <Header />
         <main className="app-main">{children}</main>
       </div>
+      <WelcomeModal />
     </div>
   );
 }
