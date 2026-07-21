@@ -10,6 +10,8 @@ import UpcomingPanel from "@/components/calendar/UpcomingPanel";
 import WebBackground from "@/components/ui/WebBackground";
 import Skeleton from "@/components/ui/Skeleton";
 import Card from "@/components/ui/Card";
+import usePersistentState from "@/hooks/usePersistentState";
+import { STORAGE_KEYS } from "@/lib/storage";
 import "./calendar.css";
 
 const today = new Date();
@@ -55,9 +57,16 @@ const monthData = {
 
 export default function CalendarPage() {
   const [viewDate, setViewDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
-  const [view, setView] = useState("month");
+  const [calendarPrefs, setCalendarPrefs] = usePersistentState(STORAGE_KEYS.CALENDAR, {
+    view: "month",
+  });
   const [selectedDay, setSelectedDay] = useState(today.getDate());
   const [loading, setLoading] = useState(true);
+
+  const view = calendarPrefs.view;
+  function setView(nextView) {
+    setCalendarPrefs((prev) => ({ ...prev, view: nextView }));
+  }
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 500);

@@ -2,11 +2,9 @@ import { Target } from "lucide-react";
 import Card from "@/components/ui/Card";
 import "./TodaysGoal.css";
 
-export default function TodaysGoal() {
-  const targetHours = 6;
-  const completedHours = 3.5;
-  const remainingHours = targetHours - completedHours;
-  const percent = Math.round((completedHours / targetHours) * 100);
+export default function TodaysGoal({ targetHours = 6, completedHours = 0 }) {
+  const remainingHours = Math.max(0, +(targetHours - completedHours).toFixed(2));
+  const percent = targetHours > 0 ? Math.min(100, Math.round((completedHours / targetHours) * 100)) : 0;
 
   return (
     <Card className="goal-card">
