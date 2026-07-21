@@ -7,6 +7,8 @@ import NotesFilterBar from "@/components/notes/NotesFilterBar";
 import NoteEditor from "@/components/notes/NoteEditor";
 import NotePreviewPanel from "@/components/notes/NotePreviewPanel";
 import EmptyState from "@/components/ui/EmptyState";
+import usePersistentState from "@/hooks/usePersistentState";
+import { STORAGE_KEYS } from "@/lib/storage";
 import "./notes.css";
 
 const initialNotes = [
@@ -121,7 +123,7 @@ const initialNotes = [
 ];
 
 export default function NotesPage() {
-  const [notes, setNotes] = useState(initialNotes);
+  const [notes, setNotes] = usePersistentState(STORAGE_KEYS.NOTES, initialNotes);
   const [searchTerm, setSearchTerm] = useState("");
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedNoteId, setSelectedNoteId] = useState(null);

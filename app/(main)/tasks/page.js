@@ -8,7 +8,32 @@ import DailyPlanner from "@/components/tasks/DailyPlanner";
 import TaskItem from "@/components/tasks/TaskItem";
 import TaskCreateModal from "@/components/tasks/TaskCreateModal";
 import UpcomingTasks from "@/components/tasks/UpcomingTasks";
+import usePersistentState from "@/hooks/usePersistentState";
+import { STORAGE_KEYS } from "@/lib/storage";
 import "./tasks.css";
+
+const initialProgress = {
+  targetHours: 6,
+  completedHours: 3.5,
+  currentStreak: 18,
+  longestStreak: 32,
+  weeklyGoal: 5,
+  weeklyDone: 5,
+};
+
+function parseDurationToHours(duration) {
+  if (!duration) return 0;
+
+  const text = duration.toLowerCase();
+  const hoursMatch = text.match(/([\d.]+)\s*h/);
+  const minsMatch = text.match(/([\d.]+)\s*m/);
+
+  let hours = 0;
+  if (hoursMatch) hours += parseFloat(hoursMatch[1]);
+  if (minsMatch) hours += parseFloat(minsMatch[1]) / 60;
+
+  return hours;
+}
 
 const initialTasks = [
   {
@@ -82,14 +107,32 @@ const initialTasks = [
 const filters = ["All", "Pending", "In Progress", "Completed", "Cancelled"];
 
 export default function TasksPage() {
-  const [tasks, setTasks] = useState(initialTasks);
+  const [tasks, setTasks] = usePersistentState(STORAGE_KEYS.TASKS, initialTasks);
+  const [progress, setProgress] = usePersistentState(STORAGE_KEYS.PROGRESS, initialProgress);
   const [activeFilter, setActiveFilter] = useState("All");
   const [showCreate, setShowCreate] = useState(false);
 
   function handleStatusChange(id, newStatus) {
+    const task = tasks.find((t) => t.id === id);
+    if (!task) return;
+
+    const wasCompleted = task.status === "Completed";
+    const willBeCompleted = newStatus === "Completed";
+
     setTasks((prev) =>
-      prev.map((task) => (task.id === id ? { ...task, status: newStatus } : task))
+      prev.map((t) => (t.id === id ? { ...t, status: newStatus } : t))
     );
+
+    if (wasCompleted !== willBeCompleted) {
+      const hours = parseDurationToHours(task.duration);
+      setProgress((prev) => ({
+        ...prev,
+        completedHours: Math.max(
+          0,
+          +(prev.completedHours + (willBeCompleted ? hours : -hours)).toFixed(2)
+        ),
+      }));
+    }
   }
 
   function handleCreate(newTask) {
@@ -113,8 +156,13 @@ export default function TasksPage() {
       </div>
 
       <div className="tasks-top-row">
-        <TodaysGoal />
-        <StudyStreak />
+        <TodaysGoal targetHours={progress.targetHours} completedHours={progress.completedHours} />
+        <StudyStreak
+          currentStreak={progress.currentStreak}
+          longestStreak={progress.longestStreak}
+          weeklyGoal={progress.weeklyGoal}
+          weeklyDone={progress.weeklyDone}
+        />
       </div>
 
       <DailyPlanner />
