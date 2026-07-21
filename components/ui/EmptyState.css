@@ -1,0 +1,46 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 60px 20px;
+  animation: emptyStateFade 300ms ease-out;
+}
+
+.empty-state-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  color: #5b5b63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.empty-state-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #c7c7cc;
+}
+
+.empty-state-subtitle {
+  font-size: 13px;
+  color: #5b5b63;
+  max-width: 280px;
+}
+
+@keyframes emptyStateFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,73 @@
+.notes-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.notes-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid #2a2a30;
+  background-color: #131316;
+  color: #5b5b63;
+  max-width: 480px;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.notes-search:focus-within {
+  border-color: #e11d2e;
+  box-shadow: 0 0 0 3px rgba(225, 29, 46, 0.12);
+}
+
+.notes-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #f7f7f8;
+  font-size: 14px;
+}
+
+.notes-search input::placeholder {
+  color: #5b5b63;
+}
+
+.notes-filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.note-filter-chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8a93;
+  border: 1px solid #2a2a30;
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.note-filter-chip:hover {
+  color: #f7f7f8;
+  border-color: #3a3a42;
+}
+
+.note-filter-chip.active {
+  background-color: #3a1216;
+  color: #e11d2e;
+  border-color: rgba(225, 29, 46, 0.4);
+}
+
+.notes-filter-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #2a2a30;
+  margin: 0 4px;
+}
