@@ -1,0 +1,149 @@
+.goal-tile {
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 18px;
+  transition: transform 150ms ease-out, border-color 150ms ease-out, box-shadow 200ms ease-out;
+  animation: goalTileFadeUp 300ms ease-out backwards;
+}
+
+.goal-tile:hover {
+  transform: translateY(-3px);
+  border-color: #3a3a42;
+  box-shadow: 0 0 22px rgba(225, 29, 46, 0.1);
+}
+
+.goal-tile.completed {
+  border-color: rgba(47, 191, 113, 0.3);
+}
+
+.goal-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.goal-tile-subject {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.goal-tile-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8a8a93;
+  background-color: #1c1c20;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.goal-tile-status.done {
+  color: #2fbf71;
+  background-color: rgba(47, 191, 113, 0.12);
+}
+
+.goal-tile-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f7f7f8;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.goal-tile-deadline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #8a8a93;
+  margin-bottom: 16px;
+}
+
+.goal-tile-progress {
+  margin-bottom: 16px;
+}
+
+.goal-tile-progress-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8a8a93;
+  margin-bottom: 8px;
+}
+
+.goal-tile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2a30;
+}
+
+.goal-tile-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #2a2a30;
+  color: #c7c7cc;
+  font-size: 12px;
+  font-weight: 600;
+  transition: border-color 150ms ease-out, color 150ms ease-out, transform 150ms ease-out;
+}
+
+.goal-tile-button:hover {
+  border-color: #3a3a42;
+  color: #f7f7f8;
+}
+
+.goal-tile-button.active {
+  color: #2fbf71;
+  border-color: rgba(47, 191, 113, 0.35);
+}
+
+.goal-tile-button:active {
+  transform: scale(0.97);
+}
+
+.goal-tile-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 8px;
+  border: 1px solid #2a2a30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a93;
+  transition: border-color 150ms ease-out, color 150ms ease-out;
+}
+
+.goal-tile-icon:hover {
+  border-color: #3a3a42;
+  color: #f7f7f8;
+}
+
+.goal-tile-icon.danger:hover {
+  color: #e11d2e;
+  border-color: rgba(225, 29, 46, 0.4);
+}
+
+@keyframes goalTileFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

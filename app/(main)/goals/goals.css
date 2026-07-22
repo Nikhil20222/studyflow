@@ -1,0 +1,132 @@
+.goals-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  animation: goalsPageFade 250ms ease-out;
+}
+
+.goals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.goals-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f7f7f8;
+  margin-bottom: 4px;
+}
+
+.goals-subtitle {
+  font-size: 13px;
+  color: #8a8a93;
+}
+
+.goals-add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 10px;
+  background-color: #e11d2e;
+  color: #f7f7f8;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
+}
+
+.goals-add-button:hover {
+  background-color: #c6172a;
+}
+
+.goals-add-button:active {
+  transform: scale(0.97);
+}
+
+.goals-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.goals-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.goals-stat-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 26px;
+  font-weight: 600;
+  color: #f7f7f8;
+}
+
+.goals-stat-label {
+  font-size: 12px;
+  color: #8a8a93;
+}
+
+.goals-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.goal-filter-chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8a93;
+  border: 1px solid #2a2a30;
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.goal-filter-chip:hover {
+  color: #f7f7f8;
+  border-color: #3a3a42;
+}
+
+.goal-filter-chip.active {
+  background-color: #3a1216;
+  color: #e11d2e;
+  border-color: rgba(225, 29, 46, 0.4);
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@keyframes goalsPageFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
+  .goals-stats,
+  .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .goals-stats,
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+}
