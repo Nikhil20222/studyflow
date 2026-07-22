@@ -1,0 +1,185 @@
+.goal-form-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+  animation: goalFormBackdropFade 200ms ease-out;
+}
+
+.goal-form-panel {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 24px;
+  animation: goalFormPanelIn 220ms ease-out;
+}
+
+.goal-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.goal-form-header h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f7f7f8;
+}
+
+.goal-form-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a93;
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.goal-form-close:hover {
+  background-color: #1c1c20;
+  color: #f7f7f8;
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.goal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.goal-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal-form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #8a8a93;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.goal-form-field input[type="text"],
+.goal-form-field select {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  background-color: #0e0e11;
+  color: #f7f7f8;
+  padding: 0 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 150ms ease-out;
+}
+
+.goal-form-field input::placeholder {
+  color: #5b5b63;
+}
+
+.goal-form-field input:focus,
+.goal-form-field select:focus {
+  border-color: rgba(225, 29, 46, 0.5);
+}
+
+.goal-form-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.goal-form-slider-row input[type="range"] {
+  flex: 1;
+  accent-color: #e11d2e;
+}
+
+.goal-form-slider-row span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f7f7f8;
+  min-width: 40px;
+  text-align: right;
+}
+
+.goal-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.goal-form-cancel,
+.goal-form-submit {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 150ms ease-out, background-color 150ms ease-out;
+}
+
+.goal-form-cancel {
+  color: #c7c7cc;
+  border: 1px solid #2a2a30;
+}
+
+.goal-form-cancel:hover {
+  background-color: #1c1c20;
+}
+
+.goal-form-submit {
+  background-color: #e11d2e;
+  color: #f7f7f8;
+}
+
+.goal-form-submit:hover {
+  background-color: #c6172a;
+}
+
+.goal-form-cancel:active,
+.goal-form-submit:active {
+  transform: scale(0.97);
+}
+
+@keyframes goalFormBackdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes goalFormPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 560px) {
+  .goal-form-row {
+    grid-template-columns: 1fr;
+  }
+}
