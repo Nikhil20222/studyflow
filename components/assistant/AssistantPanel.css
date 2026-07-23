@@ -1,0 +1,152 @@
+.assistant-panel {
+  background-color: #131316;
+  border: 1px solid #2a2a30;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.assistant-panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.assistant-panel-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 10px;
+  background-color: #3a1216;
+  color: #e11d2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assistant-panel-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f7f7f8;
+  margin-bottom: 4px;
+}
+
+.assistant-panel-header p {
+  font-size: 13px;
+  color: #8a8a93;
+}
+
+.assistant-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.assistant-form input {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #2a2a30;
+  background-color: #0e0e11;
+  color: #f7f7f8;
+  padding: 0 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+
+.assistant-form input::placeholder {
+  color: #5b5b63;
+}
+
+.assistant-form input:focus {
+  border-color: #e11d2e;
+  box-shadow: 0 0 0 3px rgba(225, 29, 46, 0.12);
+}
+
+.assistant-form button {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background-color: #e11d2e;
+  color: #f7f7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms ease-out, transform 150ms ease-out;
+}
+
+.assistant-form button:hover:not(:disabled) {
+  background-color: #c6172a;
+}
+
+.assistant-form button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.assistant-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.assistant-spin {
+  animation: assistantSpin 800ms linear infinite;
+}
+
+.assistant-answer {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #0e0e11;
+  border: 1px solid #2a2a30;
+  animation: assistantAnswerFade 250ms ease-out;
+}
+
+.assistant-answer p {
+  font-size: 14px;
+  color: #f7f7f8;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.assistant-source {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e11d2e;
+  background-color: #3a1216;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+@keyframes assistantSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes assistantAnswerFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .assistant-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .assistant-form button {
+    width: 100%;
+  }
+}

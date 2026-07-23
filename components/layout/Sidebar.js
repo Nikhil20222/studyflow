@@ -11,6 +11,7 @@ import {
   BarChart3,
   Target,
   Settings,
+  Sparkles,
 } from "lucide-react";
 import "./Sidebar.css";
 
@@ -22,6 +23,7 @@ const links = [
   { href: "/notes", label: "Notes", icon: FileText },
   { href: "/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/goals", label: "Goals", icon: Target },
+  { href: "/assistant", label: "AI Assistant", icon: Sparkles },
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 
