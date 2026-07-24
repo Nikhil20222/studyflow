@@ -1,0 +1,31 @@
+.weak-subject-row {
+  margin-bottom: 18px;
+}
+
+.weak-subject-row:last-child {
+  margin-bottom: 0;
+}
+
+.weak-subject-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.weak-subject-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.weak-subject-pending {
+  font-size: 11px;
+  color: #8a8a93;
+}
+
+.weak-subject-percent {
+  display: block;
+  font-size: 11px;
+  color: #5b5b63;
+  margin-top: 6px;
+}
