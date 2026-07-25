@@ -1,0 +1,56 @@
+.ai-response{
+  padding: 14px 16px;
+  border-radius: 12px;
+  background-color: #0e0e11;
+  border: 1px solid #2a2a30;
+  animation: aiResponseFade 250ms ease-out;
+}
+
+.ai-response.loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8a8a93;
+  font-size: 13px;
+}
+
+.ai-response p{
+  font-size: 14px;
+  color: #f7f7f8;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.ai-response-source{
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color:#e11d2e;
+  background-color: #3a1216;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.ai-response-spin {
+  animation: aiResponseSpin 800ms linear infinite;
+}
+
+@keyframes aiResponseSpin{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aiResponseFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

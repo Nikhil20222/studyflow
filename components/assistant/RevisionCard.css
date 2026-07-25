@@ -1,0 +1,51 @@
+.revision-card {
+  padding: 14px;
+  border-radius: 10px;
+  background-color: #0e0e11;
+  border: 1px solid #2a2a30;
+  margin-bottom:10px;
+  transition: border-color 150ms ease-out, transform 150ms ease-out;
+  animation: revisionCardFadeUp 300ms ease-out backwards;
+}
+
+.revision-card:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card:hover{
+  border-color: #3a3a42;
+  transform: translateY(-1px);
+}
+
+.revision-card-day {
+  font-size: 11px;
+  font-weight: 600;
+  color: #e0a72a;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.revision-card-subject {
+  display:block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e11d2e;
+  margin: 6px 0 4px;
+}
+
+.revision-card-focus {
+  font-size: 13px;
+  color: #c7c7cc;
+  line-height: 1.5;
+}
+
+@keyframes revisionCardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
